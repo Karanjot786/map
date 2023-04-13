@@ -32,8 +32,7 @@ fetch('data.csv')
     // Loop through the data and add markers to the map with custom icon
     for (let i = 0; i < jsonData.length; i++) {
       // Check for valid latitude and longitude values
-      if (jsonData[i].lat !== undefined && jsonData[i].lon !== undefined &&
-          !isNaN(jsonData[i].lat) && !isNaN(jsonData[i].lon)) {
+      if (jsonData[i].lat !== undefined && jsonData[i].lon !== undefined && !isNaN(jsonData[i].lat) && !isNaN(jsonData[i].lon)) {
         const lat = parseFloat(jsonData[i].lat); // Convert latitude string to number
         const lon = parseFloat(jsonData[i].lon); // Convert longitude string to number
         const marker = L.marker([lat, lon], {icon: customIcon}).addTo(map); // Add marker with custom icon
